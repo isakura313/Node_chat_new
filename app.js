@@ -33,7 +33,13 @@ io.on("connection", (socket)=>{
 	})
 
 	socket.on("new_message", (data)=>{
-		io.sockets.emit("add_mes", {message:data.message, username: socket.username})
+		io.sockets.emit("add_mes", {message:data.message, username: socket.username, color: data.color})
 		console.log(`Всем отправлено сообщение ${data.message}`);
 	})
 })
+
+
+
+
+
+
